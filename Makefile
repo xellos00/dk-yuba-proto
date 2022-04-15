@@ -31,6 +31,7 @@ help:
 	@echo " clean               - Clean up dist directory"
 
 go:
+	rm -rf dist
 	mkdir dist
 	protoc -I=. \
 	    --go_out dist/ --go_opt paths=source_relative \
@@ -39,5 +40,4 @@ go:
 
 clean:
 	$(call banner, "Clean up dist directory")
-	sudo rm -rf dist
-	sudo rm -rf artifact
+	rm -rf dist
